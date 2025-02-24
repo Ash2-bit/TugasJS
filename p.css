@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("bag.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.todo-app {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+                0 15px 50px rgba(0, 0, 0, 0.2); /* Shadow lebih dalam */
+    transition: box-shadow 0.3s ease-in-out;
+    
+}
+
+.todo-app h2 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #002765;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+
+.hapus #clear-btn {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #cd969c; /* Warna merah */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+.hapus #clear-btn:hover {
+    background: #ef011d; /* Warna merah lebih gelap saat hover */
+    transform: scale(1.05); /* Efek sedikit membesar */
+}
+.hapus #clear-btn:active {
+    transform: scale(0.95); /* Efek mengecil saat ditekan */
+}
+
+
+
+
+.row {
+    display: flex;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin: 20px 0;
+    height: 50px;
+    align-items: center;
+}
+
+.row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.row button {
+    border: none;
+    outline: none;
+    padding: 15px 40px;
+    background: #51abf4;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.row button:hover {
+    background: #5bd74b;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 15px 8px 15px 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    margin: 5px 0;
+    min-height: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Shadow lebih soft */
+    transition: 0.3s;
+}
+
+ul li:hover {
+    box-shadow: 0 5px 15px rgba(80, 189, 236, 0.89); /* Efek hover */
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url('dry-clean-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+    left: 10px;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+ul li.checked::before {
+    background-image: url('done-removebg-preview.png');
+}
+
+ul li span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+ul li span:hover {
+    color: red;
+}
+/* Notifikasi */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Warna untuk berbagai tipe notifikasi */
+.notification.success { background: #28a745; }  /* Hijau */
+.notification.error { background: #dc3545; }    /* Merah */
+
